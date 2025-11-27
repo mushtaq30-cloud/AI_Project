@@ -59,6 +59,10 @@ web_modules/
 # Optional REPL history
 .node_repl_history
 
+# Mac and filesystem
+.DS_Store
+*.pem
+
 # Output of 'npm pack'
 *.tgz
 
@@ -69,6 +73,18 @@ web_modules/
 .env
 .env.*
 !.env.example
+
+# Next.js generated file
+next-env.d.ts
+
+# Python virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Customize as needed for your project
+*.backup
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -137,3 +153,6 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Vercel
+.vercel
