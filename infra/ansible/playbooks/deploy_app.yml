@@ -1,0 +1,59 @@
+---
+# Deploy backend and frontend docker containers to target hosts
+# This playbook uses the community.docker collection. Install it on control node:
+# ansible-galaxy collection install community.docker
+
+- name: Deploy AI Project containers
+  hosts: app_servers
+  become: true
+  vars:
+    backend_container_name: ai_project_backend
+    frontend_container_name: ai_project_frontend
+    backend_port: 8000
+    frontend_port: 3000
+
+  tasks:
+    - name: Ensure docker python library is available
+      ansible.builtin.raw: python3 -m pip install --user docker || true
+
+    - name: Pull backend image
+      community.docker.docker_image:
+        name: "{{ image_backend }}"
+        source: pull
+
+    - name: Pull frontend image
+      community.docker.docker_image:
+        name: "{{ image_frontend }}"
+        source: pull
+
+    - name: Stop and remove existing backend container (if any)
+      community.docker.docker_container:
+        name: "{{ backend_container_name }}"
+        state: absent
+        force_kill: true
+
+    - name: Run backend container
+      community.docker.docker_container:
+        name: "{{ backend_container_name }}"
+        image: "{{ image_backend }}"
+        state: started
+        restart_policy: always
+        published_ports:
+          - "{{ backend_port }}:8000"
+        env:
+          OPENAI_API_KEY: "{{ lookup('env','OPENAI_API_KEY') }}"
+
+    - name: Stop and remove existing frontend container (if any)
+      community.docker.docker_container:
+        name: "{{ frontend_container_name }}"
+        state: absent
+        force_kill: true
+
+    - name: Run frontend container
+      community.docker.docker_container:
+        name: "{{ frontend_container_name }}"
+        image: "{{ image_frontend }}"
+        state: started
+        restart_policy: always
+        published_ports:
+          - "{{ frontend_port }}:3000"

@@ -38,7 +38,7 @@ def stream_idea():
     ]
 
     stream = client.chat.completions.create(
-        model="gpt-3.5",
+        model="gpt-5-nano",
         messages=prompt,
         stream=True,
     )
