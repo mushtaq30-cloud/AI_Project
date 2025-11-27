@@ -1,4 +1,5 @@
 # Next.js App Router (v16+) + Tailwind CSS v4 + FastAPI + SSE + Markdown + CI/CD
+
 ## AI_Project — Business Idea Generator
 
 This repository contains a small full-stack project demonstrating a production-style architecture:
@@ -74,6 +75,7 @@ curl -N http://localhost:8000/stream
 ```
 
 Notes:
+
 - In `backend/main.py` CORS is permissive for development. Restrict `allow_origins` in production.
 
 ---
@@ -103,6 +105,7 @@ npm run dev
 Open `http://localhost:3000`.
 
 Notes on Tailwind/PostCSS:
+
 - This project targets Tailwind CSS v4. The repo includes `tailwind.config.js` and `postcss.config.mjs` configured for v4 (`@tailwindcss/postcss`).
 - If you see `Cannot apply unknown utility class` errors, ensure:
   - `frontend/postcss.config.mjs` contains the Tailwind plugin (`@tailwindcss/postcss`) and `autoprefixer` is installed if required.
@@ -137,6 +140,7 @@ Push images to your registry (Docker Hub, ECR, etc.) before deploying from CI.
 - Ansible playbook: `infra/ansible/playbooks/deploy_app.yml` uses the `community.docker` collection to pull images and start containers on hosts defined in `infra/ansible/inventory/hosts.ini`.
 
 CI quick notes:
+
 - The pipeline tags Docker images with `${BRANCH}-${BUILD_NUMBER}` so artifacts are traceable.
 - You can adapt the Jenkinsfile to trigger Ansible Tower/AWX job templates (the CI README explains options).
 
@@ -179,6 +183,7 @@ npm run dev
 - Root `Makefile` with convenience `make dev` to start both services locally
 
 If you'd like, tell me which of the above I should add and I will implement it.
+
 # 🚀 Full Enterprise Setup
 
 ### **Next.js App Router (v16+) + Tailwind CSS v4 + FastAPI + SSE + Markdown**
@@ -333,10 +338,10 @@ npx create-next-app@latest frontend --typescript --app --tailwind --eslint
 
 ### Use these answers:
 
-| Prompt                  | Answer  |
-| ----------------------- | ------- |
+| Prompt                  | Answer        |
+| ----------------------- | ------------- |
 | React Compiler          | **No**  |
-| Use `/src` directory?   | **No**  |
+| Use `/src` directory? | **No**  |
 | Use App Router?         | **Yes** |
 | Customize import alias? | **No**  |
 | Use Turbopack?          | **No**  |
@@ -588,6 +593,7 @@ NEXT_PUBLIC_API_BASE_URL=https://your-backend-domain.com
 ---
 
 # 🎉 Final Result
+![Screenshot of UI](./Screenshot.png "UI Example")
 
 You now have a fully working:
 
