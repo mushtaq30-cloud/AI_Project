@@ -24,10 +24,10 @@ pnpm install
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
 ```
 
-3. Run the dev server
+3. Run the dev server with hot reload:
 
 ```bash
-npm run dev
+npm run dev --reload
 ```
 
 4. Open `http://localhost:3000` in your browser.
