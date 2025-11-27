@@ -1,4 +1,5 @@
-# AI_Project — Business Idea Generator
+# Next.js App Router (v16+) + Tailwind CSS v4 + FastAPI + SSE + Markdown + CI/CD
+## AI_Project — Business Idea Generator
 
 This repository contains a small full-stack project demonstrating a production-style architecture:
 
