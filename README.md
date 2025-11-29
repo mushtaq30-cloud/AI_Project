@@ -11,14 +11,14 @@ A compact, production-minded full‑stack demo that streams AI-generated busines
 1. [About](#about)
 2. [Prerequisites](#prerequisites)
 3. [Project layout](#project-layout)
-4. [Backend — local setup & run](#backend)
-5. [Frontend — local setup & run](#frontend)
-6. [Docker — build images locally](#docker)
-7. [Optional: Local integration with Docker Compose](#optional-docker-compose)
-8. [CI/CD (Jenkins + Ansible)](#cicd)
-9. [Run both services locally (developer convenience)](#run-both)
+4. [Backend — local setup & run](#backend--local-setup--run)
+5. [Frontend — local setup & run](#frontend--local-setup--run)
+6. [Docker — build images locally](#docker-build-images-locally)
+7. [Optional: Local integration with Docker Compose](#optional-local-integration-with-docker-compose-single-host)
+8. [CI/CD (Jenkins + Ansible)](#cicd-jenkins--ansible)
+9. [Run both services locally (developer convenience)](#run-both-services-locally-developer-convenience)
 10. [Troubleshooting](#troubleshooting)
-11. [Contributing / Next steps](#contributing)
+11. [Contributing / Next steps](#contributing--next-steps)
 
 ---
 
